@@ -5,7 +5,7 @@ You can reload waybar with SUPER + SHIFT + B
 */
 {
     "custom/quicklink_browser": {
-        "format": "",
+        "format": "",
         "on-click": "~/.config/ml4w/settings/browser.sh",
         "tooltip-format": "Open Browser"
     },
@@ -57,7 +57,6 @@ Add your quicklinks in your desired order to the status bar
         "modules": [
 
             "custom/quicklink_browser",
-            "custom/quicklink_email",
             "custom/quicklink_filemanager",
 
 /*
