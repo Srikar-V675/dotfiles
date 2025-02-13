@@ -22,6 +22,57 @@ activate() {
     source "$1/bin/activate"
 }
 
+habits() {
+	echo "
+
+   __ __     __   _ __    ______             __          
+  / // /__ _/ /  (_) /_  /_  __/______ _____/ /_____ ____
+ / _  / _ \`/ _ \/ / __/   / / / __/ _ \`/ __/  '_/ -_) __/
+/_//_/\_,_/_.__/_/\__/   /_/ /_/  \_,_/\__/_/\_\\__/_/   
+                                                         
+"
+    case "$1" in
+        log)
+            # Navigate to the script directory
+            HABIT_DIR=~/Documents/scripts/habits
+            if [[ -d "$HABIT_DIR" ]]; then
+                cd "$HABIT_DIR" || { echo "Failed to navigate to $HABIT_DIR"; return 1; }
+                
+                # Run Python from virtual environment if available
+                if [[ -f ".venv/bin/python" ]]; then
+                    .venv/bin/python habit-tracker-cli.py --log
+                else
+                    echo "Virtual environment not found."
+                fi
+            else
+                echo "Error: Directory $HABIT_DIR does not exist."
+                return 1
+            fi
+            ;;
+        
+        stats)
+            HABIT_DIR=~/Documents/scripts/habits
+            if [[ -d "$HABIT_DIR" ]]; then
+                cd "$HABIT_DIR" || { echo "Failed to navigate to $HABIT_DIR"; return 1; }
+                if [[ -f ".venv/bin/python" ]]; then
+                    .venv/bin/python habit-tracker-cli.py --stats
+                else
+                    echo "Virtual environment not found."
+                fi
+            else
+                echo "Error: Directory $HABIT_DIR does not exist."
+                return 1
+            fi
+            ;;
+        
+        *)
+            echo "Usage: habits {log|stats}"
+            return 1
+            ;;
+    esac
+}
+
+
 scrolls() {
     case "$1" in
         sync)
