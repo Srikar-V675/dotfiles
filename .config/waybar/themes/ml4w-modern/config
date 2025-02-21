@@ -29,7 +29,8 @@
         "hyprland/workspaces",
         "group/links",
 "wlr/taskbar",
-        "group/quicklinks",
+        //"group/quicklinks",
+        "custom/updates",
         "custom/empty"
     ],
 
@@ -41,7 +42,6 @@
 
     // Modules Right    
     "modules-right": [
-        "custom/updates",
         "pulseaudio",
 //"backlight",
         "bluetooth",
@@ -52,7 +52,6 @@
 "tray",
         "custom/notification",
         "custom/exit",
-        "custom/ml4w-welcome",
         "clock"
     ]
 }

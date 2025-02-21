@@ -20,7 +20,7 @@
       "default": ""
     },
     "persistent-workspaces": {
-      "*": 5
+            "*": 5
     }
   },
 
@@ -227,7 +227,7 @@
 
   // Clock
   "clock": {
-    "format": "{:%I:%M %p %a}",
+        "format": "{:%I:%M - %a %Od.%Om.%Y}",
     "on-click": "flatpak run com.ml4w.calendar",
     "timezone": "",
     "tooltip": false
